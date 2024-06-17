@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../../assets/icons/logo.svg';
 import darkTheme from '../../assets/icons/dark-theme.svg';
+import menu from '../../assets/icons/menu.svg';
 import {
   Page,
   Container,
@@ -11,6 +12,7 @@ import {
   Buttons,
   WalletButton,
   ThemeButton,
+  MenuButton,
 } from './styles';
 
 export const Header: React.FC = () => {
@@ -30,6 +32,7 @@ export const Header: React.FC = () => {
             <ThemeButton><img src={darkTheme} alt="Dark theme" /></ThemeButton>
           </Buttons>
         </Right>
+        <MenuButton><img src={menu} alt="open menu" /></MenuButton>
       </Container>
     </Page>
   )
