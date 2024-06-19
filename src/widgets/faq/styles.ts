@@ -11,6 +11,9 @@ export const Container = styled.div`
   width: 100%;
   margin: 48px auto 87px;
   padding: 0 16px;
+  @media screen and (max-width: 998px) {
+    width: 390px;
+  }
 `;
 
 export const Title = styled.h2`

@@ -15,6 +15,7 @@ export const FooterWrapper = styled.footer`
   @media screen and (max-width: 1440px) {
     align-items: center;
     padding: 32px;
+    width: 100%;
   }
   @media screen and (max-width: 998px) {
     display: block;
@@ -26,6 +27,9 @@ export const Container = styled.div`
   max-width: 1888px;
   margin: 0 auto;
   padding: 0 16px 16px;
+  @media screen and (max-width: 998px) {
+    width: 390px;
+  }
 `;
 
 export const Soc = styled.ul`
