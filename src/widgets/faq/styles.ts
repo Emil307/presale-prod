@@ -38,7 +38,7 @@ export const FaqList = styled.ul`
 
 export const FaqListItem = styled.li`
   background: var(--addable-gray);
-  border: 1px solid var(--border-faq);
+  border: 1px solid var(--border-gray);
   border-radius: 12px;
   padding: 16px 16px;
   margin-bottom: 8px;

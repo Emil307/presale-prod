@@ -4,6 +4,7 @@ import { Intro } from '../../widgets/intro';
 import { Faq } from '../../widgets/faq';
 import { Footer } from '../../widgets/footer';
 import { Chart } from '../../widgets/chart';
+import { Order } from '../../widgets/order';
 
 export const Presale: React.FC = () => {
   return (
@@ -11,6 +12,7 @@ export const Presale: React.FC = () => {
       <Header/>
       <Intro/>
       <Chart/>
+      <Order/>
       <Faq/>
       <Footer/>
     </>
