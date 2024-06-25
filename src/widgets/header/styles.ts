@@ -75,7 +75,7 @@ export const Nav = styled.nav`
 `;
 
 export const Link = styled.a`
-  color: var(--main-black);
+  color: inherit;
   font-family: 'Permanent Marker', sans-serif;
   font-size: 20px;
   line-height: 100%;
@@ -108,7 +108,7 @@ export const WalletButton = styled.button`
   font-weight: 500;
   line-height: 125%;
   letter-spacing: 0.01em;
-  color: var(--main-white);
+  color: inherit;
 `;
 
 export const ThemeButton = styled.button`
@@ -121,6 +121,14 @@ export const ThemeButton = styled.button`
   border-radius: 8px;
   border: 1px solid rgba(35, 31, 32, 0.08);
 `;
+
+
+export const LightImg = styled.img`
+  width: 42px;
+  height: 42px;
+`;
+
+export const MenuButton = styled.button`
 
 export const MenuButton = styled.button<MenuButtonProps>`
   display: none;

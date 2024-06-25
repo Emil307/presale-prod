@@ -11,13 +11,14 @@ import {
   FaqItemList,
   FaqItemListItem
 } from './styles';
+import themeState from '../../pages/Presale/store/themeState';
+import { observer } from 'mobx-react-lite';
 
-
-export const Faq: React.FC = () => {
+export const Faq: React.FC = observer(() => {
   return (
-    <Section>
+    <Section style={{background: themeState.theme === 'light' ? 'var(--main-white)' : 'var(--main-black)'}}>
       <Container>
-        <Title>FAQ</Title>
+        <Title style={{color: themeState.theme === 'light' ? 'var(--text-black)' : 'var(--text-white)'}}>FAQ</Title>
         <FaqList>
           <FaqListItem>
             <FaqItemTitle>What is LFG?</FaqItemTitle>
@@ -91,4 +92,4 @@ export const Faq: React.FC = () => {
       </Container>
     </Section>
   )
-}
+});

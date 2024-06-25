@@ -9,8 +9,8 @@ export const Section = styled.section`
 export const Container = styled.div`
   max-width: 632px;
   width: 100%;
-  margin: 48px auto 87px;
-  padding: 0 16px;
+  margin: 0 auto;
+  padding: 48px 16px 87px;
   @media screen and (max-width: 998px) {
     width: 390px;
   }
