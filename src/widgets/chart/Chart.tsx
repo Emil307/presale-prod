@@ -3,6 +3,7 @@ import useWindowSize from '../../hooks/useWindowSize';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Cell, TooltipProps } from 'recharts';
 import { data, dataMobile } from './ChartData';
 import {
+  Page,
   Section,
   ChartContainer,
   Container,
@@ -15,7 +16,8 @@ import {
   BlocksContainer,
   Block
 } from './styles';
-
+import themeState from '../../pages/Presale/store/themeState';
+import { observer } from 'mobx-react-lite';
 
 
 const getColor = (price: number) => {
@@ -56,7 +58,7 @@ const CustomTooltip = ({ active, payload }: TooltipProps<any, any>) => {
   return null;
 };
 
-export const Chart: React.FC = () => {
+export const Chart: React.FC = observer(() => {
   const { width } = useWindowSize();
 
   let displayData = [];
@@ -70,50 +72,52 @@ export const Chart: React.FC = () => {
   }
 
   return (
-    <Container>
-      <Section>
-        <Title>PRE-SALE INFO</Title>
-        <ChartContainer>
-          <ChartMiddleBlock>
-            <BlockTitle>Current Price</BlockTitle>
-            <BlockText>0.5040 USDC</BlockText>
-          </ChartMiddleBlock>
-          <StyledResponsiveContainer width="100%" >
-            <BarChart data={displayData}
-                      margin={margin}>
-              <XAxis dataKey="date"
-                     axisLine={false}
-                     tickLine={false}
-                     angle={-45}
-                     textAnchor="end"
-                     tickMargin={10}
-                     tickFormatter={CustomTickFormatter(width)}
-                     style={{ fontSize: '10px' }}/>
-              <YAxis tick={false}
-                     axisLine={false}
-                     stroke="var(--main-black)"
-                     width={0}
-                     domain={[0, 0.2]}/>
-              <Tooltip cursor={{ fill: 'transparent' }} content={<CustomTooltip />} />
-              <Bar dataKey="price"
-                   fill="var(--orange)"
-                   radius={[4, 4, 4, 4]}>
-                {getBorderCells(data)}
-              </Bar>
-            </BarChart>
-          </StyledResponsiveContainer>
-          <BlocksContainer>
-            <Block>
-              <BlockTitle>DEPOSIT</BlockTitle>
-              <BlockText>N SOL</BlockText>
-            </Block>
-            <Block>
-              <BlockTitle>Time to completion</BlockTitle>
-              <BlockText>DAY:HOUR:MIN:Sec:milisec</BlockText>
-            </Block>
-          </BlocksContainer>
-        </ChartContainer>
-      </Section>
-    </Container>
+    <Page style={{background: themeState.theme === 'light' ? 'var(--main-white)' : 'var(--main-black)'}}>
+      <Container>
+        <Section>
+          <Title>PRE-SALE INFO</Title>
+          <ChartContainer>
+            <ChartMiddleBlock>
+              <BlockTitle>Current Price</BlockTitle>
+              <BlockText>0.5040 USDC</BlockText>
+            </ChartMiddleBlock>
+            <StyledResponsiveContainer width="100%" >
+              <BarChart data={displayData}
+                        margin={margin}>
+                <XAxis dataKey="date"
+                      axisLine={false}
+                      tickLine={false}
+                      angle={-45}
+                      textAnchor="end"
+                      tickMargin={10}
+                      tickFormatter={CustomTickFormatter(width)}
+                      style={{ fontSize: '10px' }}/>
+                <YAxis tick={false}
+                      axisLine={false}
+                      stroke="var(--main-black)"
+                      width={0}
+                      domain={[0, 0.2]}/>
+                <Tooltip cursor={{ fill: 'transparent' }} content={<CustomTooltip />} />
+                <Bar dataKey="price"
+                    fill="var(--orange)"
+                    radius={[4, 4, 4, 4]}>
+                  {getBorderCells(data)}
+                </Bar>
+              </BarChart>
+            </StyledResponsiveContainer>
+            <BlocksContainer>
+              <Block>
+                <BlockTitle>DEPOSIT</BlockTitle>
+                <BlockText>N SOL</BlockText>
+              </Block>
+              <Block>
+                <BlockTitle>Time to completion</BlockTitle>
+                <BlockText>DAY:HOUR:MIN:Sec:milisec</BlockText>
+              </Block>
+            </BlocksContainer>
+          </ChartContainer>
+        </Section>
+      </Container>
+    </Page>
   )
-}
+});

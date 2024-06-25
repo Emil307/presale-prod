@@ -14,6 +14,8 @@ import {
 } from './styles';
 
 import { Sol, Ton, Evm, Card, ETH } from '../../iconComponents/TabIcons';
+import themeState from '../../pages/Presale/store/themeState';
+import { observer } from 'mobx-react-lite';
 
 const tabs = [
   { name: 'SOL', icon: Sol, label: 'SOL' },
@@ -23,7 +25,7 @@ const tabs = [
 ];
 
 
-export const Order: React.FC = () => {
+export const Order: React.FC = observer(() => {
   const [activeTab, setActiveTab] = useState('SOL');
   const [inputValue, setInputValue] = useState('2.00');
   const [activeFilter, setActiveFilter] = useState({name:'ETHEREUM', Icon: ETH});
@@ -43,8 +45,8 @@ export const Order: React.FC = () => {
   return (
     <Section>
       <Container>
-        <Title>Trade & Setup Your order</Title>
-        <Text>Preset Limit Orders or DCA in advance to acquire tokens at launch. New tokens are volatile, set a maximum price limit when trading them.</Text>
+        <Title style={{color: themeState.theme === 'light' ? 'var(--text-black)' : 'var(--text-white)'}}>Trade & Setup Your order</Title>
+        <Text style={{color: themeState.theme === 'light' ? 'var(--text-black)' : 'var(--text-white)'}}>Preset Limit Orders or DCA in advance to acquire tokens at launch. New tokens are volatile, set a maximum price limit when trading them.</Text>
         <TabWrapper>
           <TabButtons>
             {tabs.map(tab => (
@@ -64,5 +66,4 @@ export const Order: React.FC = () => {
       </Container>
     </Section>
   );
-}
-
+});

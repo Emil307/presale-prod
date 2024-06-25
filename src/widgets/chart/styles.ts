@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 import { ResponsiveContainer } from 'recharts';
 
+export const Page = styled.div`
+  width: 100%;
+`;
 
 export const StyledResponsiveContainer = styled(ResponsiveContainer)`
   height: 487.28px !important;
