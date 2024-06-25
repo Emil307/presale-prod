@@ -35,22 +35,22 @@ export const Footer: React.FC = observer(() => {
           </Block>
           <Soc>
             <SocItem>
-              <SocLink> Guild
+              <SocLink href='https://guild.xyz/punks' target='_blank'> Guild
                 <img src={guild} alt="Guild" />
               </SocLink>
             </SocItem>
             <SocItem>
-              <SocLink> Telegram
+              <SocLink href='https://t.me/Punks_Gamebot' target="_blank"> Telegram
                 <img src={tg} alt="Telegram" />
               </SocLink>
             </SocItem>
             <SocItem>
-              <SocLink> Warpcast
+              <SocLink href="https://warpcast.com/~/channel/onchainpunks" target="_blank"> Warpcast
                 <img src={wc} alt="Warpcast" />
               </SocLink>
             </SocItem>
             <SocItem>
-              <SocLink> Twitter
+              <SocLink href="https://twitter.com/we_punks" target="_blank"> Twitter
                 <img src={tw} alt="Twitter" />
               </SocLink>
             </SocItem>
