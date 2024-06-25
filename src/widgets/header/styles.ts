@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 interface MenuButtonProps {
   open: boolean;
 }
@@ -127,8 +126,6 @@ export const LightImg = styled.img`
   width: 42px;
   height: 42px;
 `;
-
-export const MenuButton = styled.button`
 
 export const MenuButton = styled.button<MenuButtonProps>`
   display: none;

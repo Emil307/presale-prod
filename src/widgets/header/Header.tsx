@@ -22,12 +22,11 @@ import themeState from '../../pages/Presale/store/themeState';
 import { observer } from 'mobx-react-lite';
 
 export const Header: React.FC = observer(() => {
+  const [isOpen, setIsOpen] = useState(false);
+
   function handleSetTheme(theme: 'dark' | 'light') {
     themeState.setTheme(theme);
   }
-
-export const Header: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     if (isOpen) {
@@ -47,7 +46,6 @@ export const Header: React.FC = () => {
     >
       <Container>
         <Logo src={themeState.theme === 'light' ? logo : logoWhite} alt='punks'/>
-        <Right>
         <Logo src={logo} alt='punks'/>
         <Right className={isOpen ? 'open': ''}>
           <Nav>
