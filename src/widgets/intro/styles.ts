@@ -5,11 +5,12 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 64px;
-  margin: 32px auto 95px;
+  margin: 0 auto;
+  padding: 32px 0 95px;
 
   @media screen and (max-width: 998px) {
     width: 358px;
-    margin: 16px auto 96px;
+    padding: 16px 0 96px;
   }
 `;
 
@@ -43,7 +44,7 @@ export const Text = styled.div`
 `;
 
 export const H3 = styled.h3`
-  color: var(--main-black);
+  color: inherit;
   font-family: 'Permanent Marker', sans-serif;
   font-size: 24px;
   line-height: 125%;

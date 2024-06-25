@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from '../../assets/icons/logo.svg';
+import logoWhite from '../../assets/icons/punks-white.svg';
 import darkTheme from '../../assets/icons/dark-theme.svg';
+import lightTheme from '../../assets/icons/light-theme.svg';
 import menu from '../../assets/icons/menu.svg';
 import {
   Page,
@@ -12,14 +14,27 @@ import {
   Buttons,
   WalletButton,
   ThemeButton,
+  LightImg,
   MenuButton,
 } from './styles';
+import themeState from '../../pages/Presale/store/themeState';
+import { observer } from 'mobx-react-lite';
 
-export const Header: React.FC = () => {
+export const Header: React.FC = observer(() => {
+  function handleSetTheme(theme: 'dark' | 'light') {
+    themeState.setTheme(theme);
+  }
+
   return (
-    <Page>
+    <Page 
+      style={{ 
+        background: themeState.theme === 'light' ? 'var(--main-white)' : 'var(--main-black)',
+        borderBottom: themeState.theme === 'light' ? '1px solid var(--addable-gray)' : '1px solid var(--main-black)',
+        color: themeState.theme === 'light' ? 'var(--main-black)' : 'var(--main-white)',
+      }}
+    >
       <Container>
-        <Logo src={logo} alt='punks'/>
+        <Logo src={themeState.theme === 'light' ? logo : logoWhite} alt='punks'/>
         <Right>
           <Nav>
             <Link>Home</Link>
@@ -28,12 +43,28 @@ export const Header: React.FC = () => {
             <Link>Presale</Link>
           </Nav>
           <Buttons>
-            <WalletButton>CONNECT WALLET</WalletButton>
-            <ThemeButton><img src={darkTheme} alt="Dark theme" /></ThemeButton>
+            <WalletButton
+              style={{
+                color: themeState.theme === 'light' ? 'var(--main-white)' : 'var(--main-black)',
+                background: themeState.theme === 'light' ? 'var(--main-black)' : 'var(--main-white)',
+              }}
+            >
+              CONNECT WALLET
+            </WalletButton>
+            {themeState.theme === 'light' &&
+              <ThemeButton onClick={() => handleSetTheme('dark')}>
+                <img src={darkTheme} alt="Dark theme" />
+              </ThemeButton>
+            }
+            {themeState.theme === 'dark' &&
+              <button onClick={() => handleSetTheme('light')}>
+                <LightImg src={lightTheme} alt="Dark theme" />
+              </button>
+            }
           </Buttons>
         </Right>
         <MenuButton><img src={menu} alt="open menu" /></MenuButton>
       </Container>
     </Page>
   )
-}
+});

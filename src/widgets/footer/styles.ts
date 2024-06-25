@@ -1,5 +1,8 @@
 import styled, { keyframes } from 'styled-components';
 
+export const Page = styled.div`
+  width: 100%;
+`;
 
 export const FooterWrapper = styled.footer`
   background: var(--main-black);
