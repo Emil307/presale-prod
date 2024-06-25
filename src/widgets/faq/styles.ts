@@ -11,6 +11,9 @@ export const Container = styled.div`
   width: 100%;
   margin: 0 auto;
   padding: 48px 16px 87px;
+  @media screen and (max-width: 998px) {
+    width: 390px;
+  }
 `;
 
 export const Title = styled.h2`
@@ -35,7 +38,7 @@ export const FaqList = styled.ul`
 
 export const FaqListItem = styled.li`
   background: var(--addable-gray);
-  border: 1px solid var(--border-faq);
+  border: 1px solid var(--border-gray);
   border-radius: 12px;
   padding: 16px 16px;
   margin-bottom: 8px;
