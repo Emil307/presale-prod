@@ -38,7 +38,7 @@ export const Order: React.FC = observer(() => {
   const tabComponents: {[key: string]: JSX.Element} = {
     SOL: <TabContentStandart inputValue={inputValue} handleInputChange={handleInputChange} name='SOL' Icon={Sol}/>,
     TON: <TabContentStandart inputValue={inputValue} handleInputChange={handleInputChange} name='TON' Icon={Ton}/>,
-    EVM: <TabContentEvm activeFilter={activeFilter} setActiveFilter={setActiveFilter}/>,
+    EVM: <TabContentEvm activeFilter={activeFilter} setActiveFilter={setActiveFilter} inputValue={inputValue} handleInputChange={handleInputChange}/>,
     CARD: <TabContentCard inputValue={inputValue} handleInputChange={handleInputChange} name='CARD'/>,
   };
 

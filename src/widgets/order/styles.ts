@@ -71,6 +71,7 @@ export const TabButtonsItem = styled.div`
   color: var(--tab-color);
   padding: 12px;
   cursor: pointer;
+  transition: color 0.2s ease-in-out;
 
   &.active {
     background: var(--main-black);
@@ -110,14 +111,8 @@ export const TabContentItem = styled.div`
   flex-direction: column;
   transition: opacity 0.2s ease-in-out;
   transition-delay: 0.2s;
-  opacity: 0;
-  position: absolute;
-  z-index: 0;
-  &.active {
-    opacity: 1;
-    position: static;
-    z-index: 1;
-  }
+  opacity: 1;
+  z-index: 1;
 `;
 
 export const TabContentItemTop = styled.div`
@@ -159,6 +154,10 @@ export const Part = styled.span`
   padding: 0 8px;
   border: 1px solid var(--border);
   border-radius: 4px;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(var(--tab-color-dark-rgb), 0.03);
+  }
 `;
 
 export const InputContainer = styled.div`
@@ -185,8 +184,7 @@ export const Input = styled.input`
 `;
 
 export const Label = styled.div`
-  position: absolute;
-  width: 84px;
+  width: fit-content;
   height: 40px;
   border-radius: 4px;
   background: var(--main-black);
@@ -196,15 +194,36 @@ export const Label = styled.div`
   transform: translateY(-50%);
   display: flex;
   align-items: center;
-  gap: 2.5px;
+  gap: 8px;
   justify-content: center;
   font-size: 15px;
   font-weight: 500;
   line-height: 18.75px;
   letter-spacing: 0.15px;
   color: var(--text-white);
+  padding: 0 12px;
+  .svgWrap {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--main-white);
+    border-radius: 100%;
+    flex-shrink: 0;
+  }
   svg {
-    fill: var(--text-white);
+    transition: 0.2s ease-in-out;
+    max-width: 21px;
+    &:not(.stroke) {
+      fill: var(--main-black);
+    }
+    &.stroke {
+      stroke: var(--main-black);
+    }
+    &.arbitrum {
+      fill: var(--main-black);
+    }
   }
 `;
 
@@ -227,7 +246,7 @@ export const AddressContainer = styled.div`
   }
 `;
 
-export const Btn = styled.div`
+export const Btn = styled.button`
   width: 100%;
   height: 75px;
   line-height: 75px;
@@ -240,6 +259,11 @@ export const Btn = styled.div`
   font-size: 15px;
   letter-spacing: 0.15px;
   text-align: center;
+  transition: background 0.2s ease-in-out;
+  &:hover {
+    background-color: rgba(var(--tab-color-dark-rgb), 0.9);
+  }
+
   &.disabled {
     opacity: 50%;
     pointer-events: none;
@@ -519,3 +543,202 @@ export const FilterSearchBalance = styled.span`
 export const FilterSearchPrice = styled.span`
   display: inline-block;
 `;
+
+
+export const OrderPrice = styled.div`
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 8px;
+  .orderLabel {
+    position: static;
+    transform: translateY(0);
+  }
+`;
+
+export const OrderCount = styled.span`
+  color: rgba(var(--tab-color-dark-rgb), 1);
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 0.48px;
+`;
+
+export const OrderAddressConteiner = styled.div`
+  width: 100%;
+  margin-top: 32px;
+`;
+
+export const OrderAddress = styled.div`
+  border: 1px solid rgba(var(--tab-color-dark-rgb), 0.08);
+  background: var(--tab-button-bg);
+  border-radius: 8px;
+  padding: 12px 20px;
+  display: flex;
+  margin-top: 8px;
+`;
+
+export const OrderAddressQR = styled.img`
+  width: 81px;
+  height: 81px;
+`;
+
+export const OrderAddressWallet = styled.p`
+  width: 220px;
+  margin-left: 32px;
+  font-size: 15px;
+  line-height: 18.75px;
+  letter-spacing: 0.15px;
+  font-weight: 500;
+`;
+
+export const OrderAddressButtons = styled.div`
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+`;
+
+export const OrderAddressButton = styled.button`
+  width: 42px;
+  height: 42px;
+  padding: 9px;
+  border-radius: 4px;
+  background: rgba(var(--tab-color-dark-rgb), 1);
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+  font-size: 0;
+  &:hover {
+    background: rgba(var(--tab-color-dark-rgb), 0.9);
+  }
+`;
+
+export const OrderStatusWrap = styled.ul`
+  width: 100%;
+  padding: 32px 0;
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const OrderStatus = styled.li`
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  &:not(:last-child) {
+    &:after {
+      content: '';
+      width: 48px;
+      height: 1px;
+      background: rgba(var(--tab-color-dark-rgb), 0.08);
+      position: absolute;
+      left: calc(100% + 24px);
+      top: 50%;
+    }
+  }
+`;
+
+export const OrderStatusImg = styled.div`
+  width: 42px;
+  height: 42px;
+  border-radius: 4px;
+  border: 1px solid rgba(var(--tab-color-dark-rgb), 0.08);
+  background: var(--tab-button-bg);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease-in-out;
+  &.done {
+    background: rgba(var(--tab-color-dark-rgb), 1);
+  }
+`;
+
+export const OrderStatusName = styled.span`
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.12px;
+  color: var(--tab-button-bg);
+  text-transform: uppercase;
+  margin-top: 8px;
+  transition: color 0.2s ease-in-out;
+  &.done {
+    color: rgba(var(--tab-color-dark-rgb), 1);
+  }
+`;
+
+export const OrderInfo= styled.div`
+  border: 1px solid rgba(var(--tab-color-dark-rgb), 0.08);
+  background: var(--tab-button-bg);
+  border-radius: 8px;
+  padding: 12px 20px;
+  display: flex;
+  img {
+    width: 24px;
+    height: 24px;
+  }
+`;
+
+export const OrderInfoContent= styled.p`
+  color: rgba(var(--tab-color-dark-rgb), 1);
+  text-transform: uppercase;
+  font-size: 15px;
+  line-height: 18.75px;
+  letter-spacing: 0.15px;
+  margin-left: 20px;
+  font-weight: 500;
+`;
+
+export const OrderInfoBtn= styled.button`
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+  border-radius: 4px;
+  margin-left: auto;
+  &:hover {
+    background: rgba(var(--tab-color-dark-rgb), 0.08);
+  }
+`;
+
+export const OrderBottom= styled.button`
+  .addressContainer {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 16px;
+    margin-bottom: 0;
+  }
+`;
+
+export const OrderBottomText= styled.p`
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18.75px;
+  letter-spacing: 0.15px;
+  padding: 15px 0;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgba(var(--tab-color-dark-rgb), 1);
+`;
+
+export const OrderTop= styled.div`
+  height: 233px;
+`;
+
+export const OrderConfirmed= styled.p`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  height: 100%;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0.24px;
+  text-align: center;
+  color: var(--confirmed-color);
+  text-transform: uppercase;
+`;
+
+

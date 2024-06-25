@@ -1,4 +1,5 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useState, useEffect } from 'react';
+import { SendOrder } from './SendOrder';
 import {
   TabContentItem,
   TabContentItemTop,
@@ -31,6 +32,16 @@ interface CurrencyOption {
 export const TabContentCard: FC<TabContentProps> = ({ inputValue, handleInputChange }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedCurrency, setSelectedCurrency] = useState<CurrencyOption>({ code: 'USD', Icon: USD });
+  const [isSendOrder, setSendOrder] = useState<boolean>(false);
+  const resetStatus = () => {
+    setSendOrder(false);
+  }
+
+  useEffect(() => {
+    if(isSendOrder) {
+      return resetStatus;
+    }
+  })
 
   const toggleDropdown = () => setIsOpen(!isOpen);
 
@@ -45,38 +56,43 @@ export const TabContentCard: FC<TabContentProps> = ({ inputValue, handleInputCha
   };
 
   return (
-    <TabContentItem className='active'>
-      <TabContentItemTop>
-        <SubTitle>You're paying</SubTitle>
-        <Count>0,2456 usdc</Count>
-        <Part>half</Part>
-        <Part>max</Part>
-      </TabContentItemTop>
-      <InputContainer>
-        <Input value={inputValue} onChange={handleInputChange} />
-        <Dropdown>
-          <DropdownButton onClick={toggleDropdown} className={`${isOpen ? 'show': ''}`}>
-            <selectedCurrency.Icon/>
-            {selectedCurrency.code}
-            <Caret/>
-          </DropdownButton>
-          {isOpen && (
-            <DropdownContent>
-              {currencies.map(currency => (
-                <DropdownItem className={`${selectedCurrency.code === currency.code ? 'active' : ''}`} key={currency.code} onClick={() => handleSelect(currency)}>
-                  {currency.code}
-                  <currency.Icon/>
-                </DropdownItem>
-              ))}
-            </DropdownContent>
-          )}
-        </Dropdown>
-      </InputContainer>
-      <AddressContainer>
-        <SubTitle>Your Solana address</SubTitle>
-        <Input value='2v8dhFoY2Pes2EYZsHh8G' readOnly />
-      </AddressContainer>
-      <Btn className='disabled'>Pending approval</Btn>
-    </TabContentItem>
+    <>
+      { !isSendOrder ? (
+        <TabContentItem className='active'>
+        <TabContentItemTop>
+          <SubTitle>You're paying</SubTitle>
+          <Count>0,2456 usdc</Count>
+          <Part>half</Part>
+          <Part>max</Part>
+        </TabContentItemTop>
+        <InputContainer>
+          <Input value={inputValue} onChange={handleInputChange} />
+          <Dropdown>
+            <DropdownButton onClick={toggleDropdown} className={`${isOpen ? 'show': ''}`}>
+              <selectedCurrency.Icon/>
+              {selectedCurrency.code}
+              <Caret/>
+            </DropdownButton>
+            {isOpen && (
+              <DropdownContent>
+                {currencies.map(currency => (
+                  <DropdownItem className={`${selectedCurrency.code === currency.code ? 'active' : ''}`} key={currency.code} onClick={() => handleSelect(currency)}>
+                    {currency.code}
+                    <currency.Icon/>
+                  </DropdownItem>
+                ))}
+              </DropdownContent>
+            )}
+          </Dropdown>
+        </InputContainer>
+        <AddressContainer>
+          <SubTitle>Your Solana address</SubTitle>
+          <Input value='2v8dhFoY2Pes2EYZsHh8G' readOnly />
+        </AddressContainer>
+        <Btn onClick={() => setSendOrder(true)}>Pending approval</Btn>
+      </TabContentItem>
+      ) : (
+        <SendOrder inputValue={inputValue} name={selectedCurrency.code} Icon={selectedCurrency.Icon}/>
+    )} </>
   )
 };
