@@ -46,7 +46,6 @@ export const Header: React.FC = observer(() => {
     >
       <Container>
         <Logo src={themeState.theme === 'light' ? logo : logoWhite} alt='punks'/>
-        <Logo src={logo} alt='punks'/>
         <Right className={isOpen ? 'open': ''}>
           <Nav>
             <Link>Home</Link>
