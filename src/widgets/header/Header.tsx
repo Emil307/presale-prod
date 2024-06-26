@@ -50,7 +50,7 @@ export const Header: React.FC = observer(() => {
           <Nav>
             <Link href="https://wepunks.wtf/" target='_blank'>Home</Link>
             <Link href="https://wepunks.wtf/#roadmap" target='_blank'>Roadmap</Link>
-            <Link href="https://wepunks.wtf/#punkinomics" target='_blank'>Punkinomics</Link>
+            <Link href="">Punkinomics</Link>
             <Link href="/#presale">Presale</Link>
           </Nav>
           <Buttons>
