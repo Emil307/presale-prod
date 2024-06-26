@@ -37,8 +37,8 @@ export const Header: React.FC = observer(() => {
   }, [isOpen]);
 
   return (
-    <Page 
-      style={{ 
+    <Page
+      style={{
         background: themeState.theme === 'light' ? 'var(--main-white)' : 'var(--main-black)',
         borderBottom: themeState.theme === 'light' ? '1px solid var(--addable-gray)' : '1px solid var(--main-black)',
         color: themeState.theme === 'light' ? 'var(--main-black)' : 'var(--main-white)',
@@ -48,10 +48,10 @@ export const Header: React.FC = observer(() => {
         <Logo src={themeState.theme === 'light' ? logo : logoWhite} alt='punks'/>
         <Right className={isOpen ? 'open': ''}>
           <Nav>
-            <Link>Home</Link>
-            <Link>Roadmap</Link>
-            <Link>Punkinomics</Link>
-            <Link>Presale</Link>
+            <Link href="https://wepunks.wtf/" target='_blank'>Home</Link>
+            <Link href="https://wepunks.wtf/#roadmap" target='_blank'>Roadmap</Link>
+            <Link href="https://wepunks.wtf/#punkinomics" target='_blank'>Punkinomics</Link>
+            <Link href="/#presale">Presale</Link>
           </Nav>
           <Buttons>
             <WalletButton

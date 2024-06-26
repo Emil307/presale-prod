@@ -74,7 +74,7 @@ export const Chart: React.FC = observer(() => {
   return (
     <Page style={{background: themeState.theme === 'light' ? 'var(--main-white)' : 'var(--main-black)'}}>
       <Container>
-        <Section>
+        <Section id="presale">
           <Title>PRE-SALE INFO</Title>
           <ChartContainer>
             <ChartMiddleBlock>

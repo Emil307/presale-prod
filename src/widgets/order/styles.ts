@@ -9,7 +9,7 @@ export const Container = styled.div`
   width: 632px;
   display: flex;
   flex-wrap: wrap;
-  margin: 32px auto 95px;
+  margin: 108px auto 95px;
   padding: 0 16px;
 
   @media screen and (max-width: 998px) {
@@ -26,6 +26,7 @@ export const Title = styled.h2`
   letter-spacing: -0.01em;
   line-height: 40px;
   font-weight: 400;
+  text-transform: uppercase;
 `;
 
 export const Text = styled.p`
@@ -34,18 +35,18 @@ export const Text = styled.p`
   font-weight: 400;
   font-size: 14px;
   letter-spacing: -0.28px;
-  line-height: 22.4px;
+  line-height: 22px;
   text-align: center;
-  margin-top: 12px;
+  margin-top: 11px;
 `;
 
 export const TabWrapper = styled.div`
   width: 100%;
-  padding: 16px;
+  padding: 15px 16px;
   border: 1px solid var(--border-gray);
   background: var(--addable-gray);
   border-radius: 12px;
-  margin-top: 32px;
+  margin-top: 31px;
 `;
 
 export const TabButtons = styled.div`
@@ -99,7 +100,7 @@ export const TabContent = styled.div`
   flex-wrap: wrap;
   overflow: hidden;
   margin-top: 16px;
-  padding-top: 16px;
+  padding-top: 18px;
   border-top: 1px solid var(--border-gray);
   position: relative;
 `;
@@ -164,7 +165,7 @@ export const InputContainer = styled.div`
   width: 100%;
   height: auto;
   position: relative;
-  margin-top: 8px;
+  margin-top: 3px;
   margin-bottom: 32px;
 `;
 
