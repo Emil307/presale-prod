@@ -129,7 +129,7 @@ export const SubTitle = styled.span`
   font-weight: 700;
   line-height: 18.75px;
   letter-spacing: 0.15px;
-  color: rgb(var(--tab-color-dark-rgb));
+  color: rgb(var( --main-black-rgb));
   display: inline-block;
   text-transform: uppercase;
 `;
@@ -157,7 +157,7 @@ export const Part = styled.span`
   border-radius: 4px;
   cursor: pointer;
   &:hover {
-    background-color: rgba(var(--tab-color-dark-rgb), 0.03);
+    background-color: rgba(var( --main-black-rgb), 0.03);
   }
 `;
 
@@ -176,7 +176,7 @@ export const Input = styled.input`
   font-size: 24px;
   line-height: 30px;
   letter-spacing: 0.48px;
-  color: rgb(var(--tab-color-dark-rgb));
+  color: rgb(var( --main-black-rgb));
   padding: 20px;
   padding-left: 124px;
   background: var(--tab-button-bg);
@@ -239,7 +239,7 @@ export const AddressContainer = styled.div`
   flex-wrap: wrap;
   gap: 8px;
   input {
-    color: rgba(var(--tab-color-dark-rgb), 0.5);
+    color: rgba(var( --main-black-rgb), 0.5);
     text-align: left;
     padding-left: 20px;
     font-size: 15px;
@@ -262,7 +262,7 @@ export const Btn = styled.button`
   text-align: center;
   transition: background 0.2s ease-in-out;
   &:hover {
-    background-color: rgba(var(--tab-color-dark-rgb), 0.9);
+    background-color: rgba(var( --main-black-rgb), 0.9);
   }
 
   &.disabled {
@@ -363,7 +363,7 @@ export const FilterSearch = styled.input`
   font-size: 24px;
   line-height: 30px;
   letter-spacing: 0.48px;
-  color: rgb(var(--tab-color-dark-rgb));
+  color: rgb(var( --main-black-rgb));
   padding: 20px;
   padding-left: 56px;
   background: var(--tab-button-bg);
@@ -471,7 +471,7 @@ export const FilterSearchListItem = styled.li`
   cursor: pointer;
   border-radius: 8px;
   &:hover {
-    background-color: rgba(var(--tab-color-dark-rgb), 0.03);
+    background-color: rgba(var( --main-black-rgb), 0.03);
   }
   &:not(:last-child) {
     border-bottom: 1px solid var(--border-gray);
@@ -529,7 +529,7 @@ export const FilterSearchListId = styled.span`
 
 export const FilterSearchFinance = styled.div`
   margin-left: auto;
-  color: rgba(var(--tab-color-dark-rgb), 1);
+  color: rgba(var( --main-black-rgb), 1);
   font-size: 18px;
   line-height: 22.5px;
   letter-spacing: 0.36px;
@@ -558,7 +558,7 @@ export const OrderPrice = styled.div`
 `;
 
 export const OrderCount = styled.span`
-  color: rgba(var(--tab-color-dark-rgb), 1);
+  color: rgba(var( --main-black-rgb), 1);
   font-weight: 500;
   font-size: 24px;
   line-height: 30px;
@@ -571,7 +571,7 @@ export const OrderAddressConteiner = styled.div`
 `;
 
 export const OrderAddress = styled.div`
-  border: 1px solid rgba(var(--tab-color-dark-rgb), 0.08);
+  border: 1px solid rgba(var( --main-black-rgb), 0.08);
   background: var(--tab-button-bg);
   border-radius: 8px;
   padding: 12px 20px;
@@ -604,12 +604,12 @@ export const OrderAddressButton = styled.button`
   height: 42px;
   padding: 9px;
   border-radius: 4px;
-  background: rgba(var(--tab-color-dark-rgb), 1);
+  background: rgba(var( --main-black-rgb), 1);
   cursor: pointer;
   transition: background 0.2s ease-in-out;
   font-size: 0;
   &:hover {
-    background: rgba(var(--tab-color-dark-rgb), 0.9);
+    background: rgba(var( --main-black-rgb), 0.9);
   }
 `;
 
@@ -631,7 +631,7 @@ export const OrderStatus = styled.li`
       content: '';
       width: 48px;
       height: 1px;
-      background: rgba(var(--tab-color-dark-rgb), 0.08);
+      background: rgba(var( --main-black-rgb), 0.08);
       position: absolute;
       left: calc(100% + 24px);
       top: 50%;
@@ -643,7 +643,7 @@ export const OrderStatusImg = styled.div`
   width: 42px;
   height: 42px;
   border-radius: 4px;
-  border: 1px solid rgba(var(--tab-color-dark-rgb), 0.08);
+  border: 1px solid rgba(var( --main-black-rgb), 0.08);
   background: var(--tab-button-bg);
   position: relative;
   display: inline-flex;
@@ -651,7 +651,7 @@ export const OrderStatusImg = styled.div`
   justify-content: center;
   transition: background 0.2s ease-in-out;
   &.done {
-    background: rgba(var(--tab-color-dark-rgb), 1);
+    background: rgba(var( --main-black-rgb), 1);
   }
 `;
 
@@ -665,12 +665,12 @@ export const OrderStatusName = styled.span`
   margin-top: 8px;
   transition: color 0.2s ease-in-out;
   &.done {
-    color: rgba(var(--tab-color-dark-rgb), 1);
+    color: rgba(var( --main-black-rgb), 1);
   }
 `;
 
 export const OrderInfo= styled.div`
-  border: 1px solid rgba(var(--tab-color-dark-rgb), 0.08);
+  border: 1px solid rgba(var( --main-black-rgb), 0.08);
   background: var(--tab-button-bg);
   border-radius: 8px;
   padding: 12px 20px;
@@ -682,7 +682,7 @@ export const OrderInfo= styled.div`
 `;
 
 export const OrderInfoContent= styled.p`
-  color: rgba(var(--tab-color-dark-rgb), 1);
+  color: rgba(var( --main-black-rgb), 1);
   text-transform: uppercase;
   font-size: 15px;
   line-height: 18.75px;
@@ -699,7 +699,7 @@ export const OrderInfoBtn= styled.button`
   border-radius: 4px;
   margin-left: auto;
   &:hover {
-    background: rgba(var(--tab-color-dark-rgb), 0.08);
+    background: rgba(var( --main-black-rgb), 0.08);
   }
 `;
 
@@ -720,7 +720,7 @@ export const OrderBottomText= styled.p`
   padding: 15px 0;
   text-align: center;
   text-transform: uppercase;
-  color: rgba(var(--tab-color-dark-rgb), 1);
+  color: rgba(var( --main-black-rgb), 1);
 `;
 
 export const OrderTop= styled.div`

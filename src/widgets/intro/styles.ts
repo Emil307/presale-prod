@@ -29,9 +29,10 @@ export const Title = styled.h1`
   font-family: 'Permanent Marker', sans-serif;
   font-size: 40px;
   letter-spacing: -0.01em;
+
 `;
 
-export const Body = styled.div` 
+export const Body = styled.div`
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -41,6 +42,7 @@ export const Text = styled.div`
   display: flex;
   flex-direction: column;
   gap: 30px;
+  text-align: justify;
 `;
 
 export const H3 = styled.h3`
@@ -53,9 +55,12 @@ export const H3 = styled.h3`
 
 export const Links = styled.div`
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 10px;
   width: fit-content;
   margin: 0 auto;
+  cursor: pointer;
 `;
 
 export const Link = styled.a`
@@ -66,8 +71,10 @@ export const Link = styled.a`
   line-height: 125%;
   letter-spacing: 0.01em;
   text-transform: uppercase;
-
   padding: 8px 12px;
   border-radius: 32px;
   background: var(--addable-gray);
+  @media screen and (max-width: 998px) {
+    width: 120px;
+  }
 `;

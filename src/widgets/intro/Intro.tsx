@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import intro from '../../assets/img/intro.jpg';
+import { Allocation } from '../allocation';
 import {
   Container,
   Img,
@@ -15,6 +16,7 @@ import themeState from '../../pages/Presale/store/themeState';
 import { observer } from 'mobx-react-lite';
 
 export const Intro: React.FC = observer(() => {
+  const [isModalOpen, setModalOpen] = useState<boolean>(false);
   return (
     <div style={{ background: themeState.theme === 'light' ? 'var(--main-white)' : 'var(--main-black)' }}>
       <Container>
@@ -27,7 +29,7 @@ export const Intro: React.FC = observer(() => {
                 <p>We see the promise of crypto and peer-to-peer (P2P) economies as the new wave, not just in redistributing wealth but also in creating new fortunes by supporting the underserved.</p>
                 <p>Our mission? To eliminate barriers and make capital truly global, linking the world as seamlessly as the internet itself. And you—the game-changers, the visionaries, the "PUNKS"—are a crucial part of this mission.</p>
               </Text>
-              
+
               <Text style={{color: themeState.theme === 'light' ? 'var(--text-black)' : 'var(--text-white)'}}>
                 <H3>$PIZZAS Today</H3>
                 <p>We are the #1 NFT lending protocol on Solana, boasting a 90% market share! We've set a world record for the total number of loans issued across all blockchain networks.</p>
@@ -49,7 +51,9 @@ export const Intro: React.FC = observer(() => {
             <Link>telegram</Link>
             <Link>twitter(x)</Link>
             <Link>pokenomics</Link>
+            <Link onClick={() => setModalOpen(true)}>allocation</Link>
           </Links>
+          <Allocation isOpen={isModalOpen} onClose={() => setModalOpen(false)}/>
         </Content>
       </Container>
     </div>
