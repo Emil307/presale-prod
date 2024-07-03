@@ -76,5 +76,6 @@ export const Link = styled.a`
   background: var(--addable-gray);
   @media screen and (max-width: 998px) {
     width: 120px;
+    text-align: center;
   }
 `;

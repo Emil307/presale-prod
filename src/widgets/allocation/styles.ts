@@ -24,6 +24,8 @@ export const ModalContainer = styled.div`
   padding: 36px 16px;
   border-radius: 12px;
   position: relative;
+  overflow-y: auto;
+  max-height: 100%;
   @media screen and (max-width: 998px) {
     width: 358px;
   }

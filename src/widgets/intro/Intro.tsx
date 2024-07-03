@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import intro from '../../assets/img/intro.jpg';
 import { Allocation } from '../allocation';
+import { Tokenomic } from '../tokenomic';
 import {
   Container,
   Img,
@@ -16,7 +17,8 @@ import themeState from '../../pages/Presale/store/themeState';
 import { observer } from 'mobx-react-lite';
 
 export const Intro: React.FC = observer(() => {
-  const [isModalOpen, setModalOpen] = useState<boolean>(false);
+  const [isAllocationOpen, setAllocationOpen] = useState<boolean>(false);
+  const [isTokenomicOpen, setTokenomicOpen] = useState<boolean>(false);
   return (
     <div style={{ background: themeState.theme === 'light' ? 'var(--main-white)' : 'var(--main-black)' }}>
       <Container>
@@ -50,10 +52,11 @@ export const Intro: React.FC = observer(() => {
           <Links>
             <Link>telegram</Link>
             <Link>twitter(x)</Link>
-            <Link>pokenomics</Link>
-            <Link onClick={() => setModalOpen(true)}>allocation</Link>
+            <Link onClick={() => setTokenomicOpen(true)}>tokenomics</Link>
+            <Link onClick={() => setAllocationOpen(true)}>allocation</Link>
           </Links>
-          <Allocation isOpen={isModalOpen} onClose={() => setModalOpen(false)}/>
+          <Tokenomic isOpen={isTokenomicOpen} onClose={() => setTokenomicOpen(false)}/>
+          <Allocation isOpen={isAllocationOpen} onClose={() => setAllocationOpen(false)}/>
         </Content>
       </Container>
     </div>
