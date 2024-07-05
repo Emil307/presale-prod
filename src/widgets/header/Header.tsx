@@ -5,6 +5,8 @@ import darkTheme from '../../assets/icons/dark-theme.svg';
 import lightTheme from '../../assets/icons/light-theme.svg';
 import menu from '../../assets/icons/menu.svg';
 import close from '../../assets/icons/close.svg';
+import { Allocation } from '../allocation';
+import { Tokenomic } from '../tokenomic';
 import {
   Page,
   Container,
@@ -23,6 +25,8 @@ import { observer } from 'mobx-react-lite';
 
 export const Header: React.FC = observer(() => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isAllocationOpen, setAllocationOpen] = useState<boolean>(false);
+  const [isTokenomicOpen, setTokenomicOpen] = useState<boolean>(false);
 
   function handleSetTheme(theme: 'dark' | 'light') {
     themeState.setTheme(theme);
@@ -50,7 +54,8 @@ export const Header: React.FC = observer(() => {
           <Nav>
             <Link href="https://wepunks.wtf/" target='_blank'>Home</Link>
             <Link href="https://wepunks.wtf/#roadmap" target='_blank'>Roadmap</Link>
-            <Link href="">Punkinomics</Link>
+            <Link onClick={() => setTokenomicOpen(true)}>Punkinomics</Link>
+            <Link onClick={() => setAllocationOpen(true)}>Allocation</Link>
             <Link href="/#presale">Presale</Link>
           </Nav>
           <Buttons>
@@ -77,6 +82,8 @@ export const Header: React.FC = observer(() => {
         <MenuButton open={isOpen} onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <img src={close} alt="close menu" /> : <img src={menu} alt="open menu" />}
         </MenuButton>
+        <Tokenomic isOpen={isTokenomicOpen} onClose={() => setTokenomicOpen(false)}/>
+        <Allocation isOpen={isAllocationOpen} onClose={() => setAllocationOpen(false)}/>
       </Container>
     </Page>
   )
