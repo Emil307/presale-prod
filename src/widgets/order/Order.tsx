@@ -14,7 +14,7 @@ import {
   TabContent,
 } from './styles';
 
-import { Sol, Ton, Evm, Card, ETH } from '../../iconComponents/TabIcons';
+import { Sol, Ton, Evm, Card } from '../../iconComponents/TabIcons';
 import themeState from '../../pages/Presale/store/themeState';
 import { observer } from 'mobx-react-lite';
 
