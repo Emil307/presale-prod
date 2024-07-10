@@ -22,6 +22,7 @@ import {
 } from './styles';
 import themeState from '../../pages/Presale/store/themeState';
 import { observer } from 'mobx-react-lite';
+import { TonConnectButton } from '@tonconnect/ui-react';
 
 export const Header: React.FC = observer(() => {
   const [isOpen, setIsOpen] = useState(false);

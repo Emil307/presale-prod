@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import { TabButton } from './TabButton';
 import { TabContentStandart } from './TabContentStandart';
-import { TabContentEvm } from './TabContentEvm';
+// import { TabContentEvm } from './TabContentEvm';
+import { DeBridge } from './DeBridge';
 import { TabContentCard } from './TabContentCard';
 import {
   Section,
@@ -28,7 +29,7 @@ const tabs = [
 export const Order: React.FC = observer(() => {
   const [activeTab, setActiveTab] = useState('SOL');
   const [inputValue, setInputValue] = useState('2.00');
-  const [activeFilter, setActiveFilter] = useState({name:'ETHEREUM', Icon: ETH});
+  // const [activeFilter, setActiveFilter] = useState({name:'ETHEREUM', Icon: ETH});
 
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -38,7 +39,8 @@ export const Order: React.FC = observer(() => {
   const tabComponents: {[key: string]: JSX.Element} = {
     SOL: <TabContentStandart inputValue={inputValue} handleInputChange={handleInputChange} name='SOL' Icon={Sol}/>,
     TON: <TabContentStandart inputValue={inputValue} handleInputChange={handleInputChange} name='TON' Icon={Ton}/>,
-    EVM: <TabContentEvm activeFilter={activeFilter} setActiveFilter={setActiveFilter} inputValue={inputValue} handleInputChange={handleInputChange}/>,
+    // EVM: <TabContentEvm activeFilter={activeFilter} setActiveFilter={setActiveFilter} inputValue={inputValue} handleInputChange={handleInputChange}/>,
+    EVM: <DeBridge/>,
     CARD: <TabContentCard inputValue={inputValue} handleInputChange={handleInputChange} name='CARD'/>,
   };
 
