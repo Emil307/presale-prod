@@ -19,14 +19,14 @@ export const DeBridge: React.FC = () => {
   return (
     <div style={{ position: 'relative', height: '500px' }}>
       <div style={{ position: 'absolute', zIndex: 1, top: 0, left: 0 }}>
-        <Skeleton style={{ width: '566px', height: '24px', margin: '36px 0 18px' }} highlightColor='#BCBCAF' baseColor='#D1D1C9' />
-        <Skeleton style={{ width: '566px', height: '16px', margin: '18px 0 8px' }} highlightColor='#BCBCAF' baseColor='#D1D1C9' />
-        <Skeleton style={{ width: '566px', height: '56px', margin: '0 0 36px' }} highlightColor='#BCBCAF' baseColor='#D1D1C9' />
-        <Skeleton style={{ width: '566px', height: '16px', margin: '18px 0 8px' }} highlightColor='#BCBCAF' baseColor='#D1D1C9' />
-        <Skeleton style={{ width: '566px', height: '56px', margin: '0 0 18px' }} highlightColor='#BCBCAF' baseColor='#D1D1C9' />
-        <Skeleton style={{ width: '566px', height: '20px', margin: '18px 0 20px' }} highlightColor='#BCBCAF' baseColor='#D1D1C9' />
-        <Skeleton style={{ width: '566px', height: '20px', margin: '19.5px 0' }} highlightColor='#BCBCAF' baseColor='#D1D1C9' />
-        <Skeleton style={{ width: '566px', height: '56px' }} highlightColor='#BCBCAF' baseColor='#D1D1C9' />
+        <Skeleton style={{ width: '566px', height: '24px', margin: '36px 0 18px', borderRadius: '6px' }} highlightColor='#BCBCAF' baseColor='#D1D1C9' />
+        <Skeleton style={{ width: '566px', height: '16px', margin: '18px 0 8px', borderRadius: '6px' }} highlightColor='#BCBCAF' baseColor='#D1D1C9' />
+        <Skeleton style={{ width: '566px', height: '56px', margin: '0 0 36px', borderRadius: '6px' }} highlightColor='#BCBCAF' baseColor='#D1D1C9' />
+        <Skeleton style={{ width: '566px', height: '16px', margin: '18px 0 8px', borderRadius: '6px' }} highlightColor='#BCBCAF' baseColor='#D1D1C9' />
+        <Skeleton style={{ width: '566px', height: '56px', margin: '0 0 18px', borderRadius: '6px' }} highlightColor='#BCBCAF' baseColor='#D1D1C9' />
+        <Skeleton style={{ width: '566px', height: '20px', margin: '18px 0 20px', borderRadius: '6px' }} highlightColor='#BCBCAF' baseColor='#D1D1C9' />
+        <Skeleton style={{ width: '566px', height: '20px', margin: '19.5px 0', borderRadius: '6px' }} highlightColor='#BCBCAF' baseColor='#D1D1C9' />
+        <Skeleton style={{ width: '566px', height: '56px', borderRadius: '6px' }} highlightColor='#BCBCAF' baseColor='#D1D1C9' />
       </div>
       <div style={{ position: 'absolute', zIndex: 2, top: 0, left: 0 }} id="debridgeWidget"></div>
     </div>
