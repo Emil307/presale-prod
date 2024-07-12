@@ -38,7 +38,8 @@ export const Order: React.FC = observer(() => {
 
   const tabComponents: {[key: string]: JSX.Element} = {
     SOL: <TabContentStandart inputValue={inputValue} handleInputChange={handleInputChange} name='SOL' Icon={Sol}/>,
-    TON: <TabContentStandart inputValue={inputValue} handleInputChange={handleInputChange} name='TON' Icon={Ton}/>,
+    // TON: <TabContentStandart inputValue={inputValue} handleInputChange={handleInputChange} name='TON' Icon={Ton}/>,
+    TON: <iframe id="simpleswap-frame" name="SimpleSwap Widget" width="566px" height="392px" src="https://simpleswap.io/widget/06989838-e591-4f41-a48f-2672c6d26f65" frameBorder="0"></iframe>,
     // EVM: <TabContentEvm activeFilter={activeFilter} setActiveFilter={setActiveFilter} inputValue={inputValue} handleInputChange={handleInputChange}/>,
     EVM: <DeBridge/>,
     CARD: <TabContentCard inputValue={inputValue} handleInputChange={handleInputChange} name='CARD'/>,
