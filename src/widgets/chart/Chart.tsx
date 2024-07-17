@@ -71,6 +71,11 @@ export const Chart: React.FC = observer(() => {
     margin = {top: 0, right: 0, left: 0, bottom: 17}
   }
 
+
+  const maxY = Math.max(...displayData.map((item) => item.price));
+  const yAxisDomain = [0, maxY * 2];
+
+
   return (
     <Page style={{background: themeState.theme === 'light' ? 'var(--main-white)' : 'var(--main-black)'}}>
       <Container>
@@ -96,7 +101,7 @@ export const Chart: React.FC = observer(() => {
                       axisLine={false}
                       stroke="var(--main-black)"
                       width={0}
-                      domain={[0, 0.2]}/>
+                      domain={yAxisDomain}/>
                 <Tooltip cursor={{ fill: 'transparent' }} content={<CustomTooltip />} />
                 <Bar dataKey="price"
                     fill="var(--orange)"

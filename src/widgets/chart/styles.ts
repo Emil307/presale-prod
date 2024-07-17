@@ -22,9 +22,15 @@ export const ChartContainer = styled.div`
 export const Section = styled.section`
   background: var(--main-black);
   border-radius: 12px;
-  padding: 32px 32px 9px;
+  padding: 32px 244px 9px;
   width: 100%;
   overflow: hidden;
+  @media screen and (max-width: 1439px) {
+    padding: 32px 100px 9px;
+  }
+  @media screen and (max-width: 998px) {
+    padding: 32px 32px 9px;
+  }
 `;
 
 export const Container = styled.div`

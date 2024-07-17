@@ -1,4 +1,4 @@
-import React  from 'react';
+import React from 'react';
 import { Header } from '../../widgets/header';
 import { Intro } from '../../widgets/intro';
 import { Faq } from '../../widgets/faq';

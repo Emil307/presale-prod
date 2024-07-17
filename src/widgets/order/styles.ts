@@ -70,7 +70,7 @@ export const TabButtonsItem = styled.div`
   text-transform: uppercase;
   background: var(--tab-button-bg);
   color: var(--tab-color);
-  padding: 12px;
+  padding: 12px 5px;
   cursor: pointer;
   transition: color 0.2s ease-in-out;
 

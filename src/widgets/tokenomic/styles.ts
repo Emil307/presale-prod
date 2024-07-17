@@ -1,4 +1,24 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+const slideIn = keyframes`
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
 
 export const ModalBackdrop = styled.div`
   position: fixed;
@@ -11,16 +31,18 @@ export const ModalBackdrop = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 10;
+  animation: ${fadeIn} 0.2s ease-out forwards;
 `;
 
 export const ModalContainer = styled.div`
-  width: 100%;
+  width: calc(100% - 40px);
   max-height: 100%;
   max-width: 1368px;
   background-color: var(--main-white);
   padding: 36px 16px;
   border-radius: 12px;
   position: relative;
+  animation: ${slideIn} 0.3s ease-out forwards;
   @media screen and (max-width: 998px) {
     width: 358px;
   }
@@ -73,14 +95,6 @@ export const ZoomableContainer = styled.div`
   @media screen and (max-width: 998px) and (orientation: landscape) {
     height: 247px;
   }
-  /* &:hover {
-    overflow: scroll;
-    img {
-      width: 1336px;
-      height: auto;
-      min-width: 100%;
-    }
-  } */
   img {
     width: 100%;
     max-width: 1336px;

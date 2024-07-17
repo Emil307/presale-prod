@@ -56,7 +56,7 @@ export const Header: React.FC = observer(() => {
             <Link href="https://wepunks.wtf/#roadmap" target='_blank'>Roadmap</Link>
             <Link onClick={() => setTokenomicOpen(true)}>Punkinomics</Link>
             <Link onClick={() => setAllocationOpen(true)}>Allocation</Link>
-            <Link href="/#presale">Presale</Link>
+            <Link href="/#presale" onClick={() => setIsOpen(false)}>Presale</Link>
           </Nav>
           <Buttons>
             <WalletButton
