@@ -57,7 +57,7 @@ export const TabButtons = styled.div`
 `;
 
 export const TabButtonsItem = styled.div`
-  width: 25%;
+  width: 33.33%;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -2,8 +2,6 @@ import React, {useState} from 'react';
 import { TabButton } from './TabButton';
 import { TabContentStandart } from './TabContentStandart';
 // import { TabContentEvm } from './TabContentEvm';
-import { DeBridge } from './DeBridge';
-import { TabContentCard } from './TabContentCard';
 import {
   Section,
   Container,
@@ -13,8 +11,9 @@ import {
   TabButtons,
   TabContent,
 } from './styles';
+import { DeBridge } from './DeBridge';
 
-import { Sol, Ton, Evm, Card } from '../../iconComponents/TabIcons';
+import { Sol, Ton, Evm } from '../../iconComponents/TabIcons';
 import themeState from '../../pages/Presale/store/themeState';
 import { observer } from 'mobx-react-lite';
 
@@ -22,7 +21,7 @@ const tabs = [
   { name: 'SOL', icon: Sol, label: 'SOL' },
   { name: 'TON', icon: Ton, label: 'TON' },
   { name: 'EVM', icon: Evm, label: 'EVM' },
-  { name: 'CARD', icon: Card, label: 'CARD' },
+  // { name: 'CARD', icon: Card, label: 'CARD' },
 ];
 
 
@@ -42,7 +41,7 @@ export const Order: React.FC = observer(() => {
     TON: <iframe id="simpleswap-frame" name="SimpleSwap Widget" width="566px" height="392px" src="https://simpleswap.io/widget/06989838-e591-4f41-a48f-2672c6d26f65" frameBorder="0"></iframe>,
     // EVM: <TabContentEvm activeFilter={activeFilter} setActiveFilter={setActiveFilter} inputValue={inputValue} handleInputChange={handleInputChange}/>,
     EVM: <DeBridge/>,
-    CARD: <TabContentCard inputValue={inputValue} handleInputChange={handleInputChange} name='CARD'/>,
+    // CARD: <TabContentCard inputValue={inputValue} handleInputChange={handleInputChange} name='CARD'/>,
   };
 
   return (
